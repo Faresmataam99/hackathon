@@ -7,7 +7,6 @@ import axios from "axios";
 
 export default function Navbar() {
   const { user, isConnected } = useSelector((state) => state.user);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -50,6 +49,9 @@ export default function Navbar() {
                   Become a member
                 </li>
               </Link>
+              <Link href={"/shop"}>
+              <li className="text-lg font-semibold hover:underline">Shop</li>
+              </Link>
               <Link href={"/help"}>
                 <li className="text-lg font-semibold hover:underline">
                   Assistance
@@ -71,12 +73,12 @@ export default function Navbar() {
             </ul>
           </div>
           {isConnected ? (
-            <div>
-              <span> {user.firstname} </span>
-              <span onClick={()=>dispatch(logoutAction(user))} className="rounded-full bg-red-400 text-white font-semibold px-4 py-2">
+            <div className="flex items-center gap-6">
+              <span className="rounded-full bg-blue-400  duration-200 px-4 text-white py-2 font-semibold"> {user?.firstname} </span>
+              <button onClick={()=>dispatch(logoutAction(user))} className="rounded-full bg-red-400 hover:bg-red-700 transition-all  text-white font-semibold px-4 py-2">
                 {" "}
                 Logout{" "}
-              </span>
+              </button>
             </div>
           ) : (
             <div className="flex items-center gap-4">

@@ -7,16 +7,16 @@ export default function page() {
         <h1 className="text-4xl font-serif font-bold text-center mb-8 ">
           About HabitForge
         </h1>
-
+        
         {/* Mission Section */}
         <section className="mb-12 flex">
           <img src="/about-picture.jpg" alt="" className="w-1/2" />
-          <div className="px-5">
+          <div className=" p-2 mr-40 justify-start">
             <h2 className="text-4xl font-semibold mb-4 text-[rgb(34,73,69)]">
               Our Mission
             </h2>
-            <p
-              className="text-lg text-gray-700 font-serif
+            <p 
+              className="text-lg text-gray-700 font-serif 
 "
             >
               At Habit Forge, we believe that small, consistent changes can lead

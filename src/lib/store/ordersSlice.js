@@ -25,12 +25,14 @@ export const ordersSlice = createSlice({
           stock: 1,
         });
       }
+
       updateLocalStorage(state.products);
       // Initialize the validation status for each order
       action.payload.forEach((order) => {
         state.isValid[order._id] = false; // Initially set each order as not valid
       });
     },
+
 
     // Update the validation status of specific orders
     validateOrder(state, action) {
@@ -40,6 +42,6 @@ export const ordersSlice = createSlice({
   },
 });
 
-export const { createOrder, validateOrder } = ordersSlice.actions;
-export default ordersSlice.reducer;
 
+export const { createOrder, validateOrder } = ordersSlice.actions;
+export default ordersSlice.reducer ;
